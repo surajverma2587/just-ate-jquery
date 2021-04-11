@@ -75,10 +75,14 @@ const getFilteredRestaurants = (searchTerm) => {
 const onSearch = () => {
   const restaurantName = $("#search").val();
   const filteredRestaurants = getFilteredRestaurants(restaurantName);
+
+  renderRestaurantCards(filteredRestaurants);
 };
 
 const renderRestaurantCards = (restaurants) => {
   const container = $("#restaurants-container");
+
+  container.empty();
 
   const renderCard = (eachRestaurant) => {
     const card = `<div class="card text-center m-2" style="width: 18rem">
